@@ -4,7 +4,7 @@ Now that you’ve created a Salesforce DX project, what’s next? Here are some 
 
 ## How To Use Postman With Salesforce ?
 
-Sources : https://trailhead.salesforce.com/fr/content/learn/projects/quick-start-connect-postman-to-salesforce/set-up-your-org
+*Sources : https://trailhead.salesforce.com/fr/content/learn/projects/quick-start-connect-postman-to-salesforce/set-up-your-org*
 
 ### Set Up Cross-Origin Resource Sharing in Salesforce
 
