@@ -75,4 +75,21 @@ You need to authenticate with Salesforce to access the APIs. Authentication gran
 7. In Postman the window will show "Status 201 Created".
 8. In the instance of Salesforce Organisation, you will find a new Account named "Postman".
 
+## Naming Conventions and Deseign Pattern
+Folow the rules of this GitHub Repository https://github.com/cfpb/salesforce-docs/blob/master/_pages/Salesforce-Naming-Conventions.md
+### Design pattern 'domain layer class'
+
+* Classes ClassName_Test → Regroups all tests methods on a specific class. 
+* SobjectNameAction_Queueable → Class that contains the methode start(), execute(), finish(). _Queueable stands for automaticaly launch code. 
+* SobjectNameActionExecute_Queueable → Class that calls on, and instantiate _Queueable. _Queueable stands for automaticaly launch code. _Queueable stands for automaticaly launch code.
+* SobjectNameActionHelper_Queueable → Class that will regroup all methodes used by the _Queueable class, disregarding code duplication. _Queueable stands for automaticaly scheduled Batch. 
+* SobjectNameDataFactory → Class that contains all the methodes that generates records for the tests. SobjectNameFilter → Class that contains all the methodes to filter throught the cited type. 
+* SobjectNameGet → Class that contains all the methodes used to get records, using SOQL. SobjectNameTrigger _Test → Regroups all tests methods for the Trigger. 
+* SobjectNameTriggerHandler → implements all the methods declared in TriggerHandler class. Calls on methods in SobjectNameTriggerHelper. 
+* SobjectNameTriggerHelper → Regroups all tests methods called by SobjectNameTriggerHandler. TriggerHandler → methods defining how all triggers will work.
+
+* Methods All methods begin by a verb. All tests methods begin by test. CheckSobjectNamePermissions → method that will chek CRUD before DML operation. setupClassName -> design pattern for all setup method begining a test class.
+
+* All constants used in this project are declared within the Class which uses them. Beacaus, if all the CONSTANTS are kept in an external Class, if only one is used, all of them will be instanciate. It will have a huge impact on Apex Heap Size.
+
 

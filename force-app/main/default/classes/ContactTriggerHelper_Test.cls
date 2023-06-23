@@ -6,7 +6,8 @@
  * @last modified by  : Muriel Proton
 **/
 @isTest
-public with sharing class ContactGet_Test {
+public with sharing class ContactTriggerHelper_Test {
+
     private static String lastNameForTest = 'Shazam';
 
     @TestSetup
@@ -25,15 +26,15 @@ public with sharing class ContactGet_Test {
         }
     }
     @isTest
-    public static void testgetContactListByLastName(){
-        
+    public testContactExistsAlready() {
         Test.startTest();
-        List<Contact> contactsListToTestOne = ContactGet.getContactListByLastName(lastNameForTest);
-        List<Contact> contactsListToTestZero = ContactGet.getContactListByLastName('Miss Invisible');
+        Boolean responseToContactTrue = ContactTriggerHelper.contactExistsAlready(lastNameAXG);
+        Boolean responseToContactFalse = ContactTriggerHelper.contactExistsAlready(lastNameAXG);
+
         Test.stopTest();
 
-        System.assertEquals( 1, contactsListToTestOne.size(),'ContactGet.getContactListByLastName() should return a list of five records.');
-        System.assertEquals( 0, contactsListToTestZero.size(),'ContactGet.getContactListByLastName() should return a list of five records.');
+        System.assertEquals( true, responseToContactTrue,'ContactTriggerHelper.contactExistsAlready() should return true.');
+        System.assertEquals( false, responseToContactFalse,'ContactTriggerHelper.contactExistsAlready() should return false.');
     
     }
 }
