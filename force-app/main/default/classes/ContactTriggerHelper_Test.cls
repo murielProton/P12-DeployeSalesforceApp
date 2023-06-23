@@ -7,7 +7,6 @@
 **/
 @isTest
 public with sharing class ContactTriggerHelper_Test {
-
     private static String lastNameForTest = 'Shazam';
 
     @TestSetup
@@ -26,11 +25,11 @@ public with sharing class ContactTriggerHelper_Test {
         }
     }
     @isTest
-    public testContactExistsAlready() {
-        Test.startTest();
-        Boolean responseToContactTrue = ContactTriggerHelper.contactExistsAlready(lastNameAXG);
-        Boolean responseToContactFalse = ContactTriggerHelper.contactExistsAlready(lastNameAXG);
+    public static void testContactExistsAlready() {
 
+        Test.startTest();
+        Boolean responseToContactTrue = ContactTriggerHelper.contactExistsAlready(lastNameForTest);
+        Boolean responseToContactFalse = ContactTriggerHelper.contactExistsAlready('Miss Invisible');
         Test.stopTest();
 
         System.assertEquals( true, responseToContactTrue,'ContactTriggerHelper.contactExistsAlready() should return true.');

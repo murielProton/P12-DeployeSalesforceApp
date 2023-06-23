@@ -8,7 +8,7 @@
 public with sharing class ContactTriggerHelper {
     public static Boolean contactExistsAlready(String lastNameAXG){
         List<Contact> contactExisting = ContactGet.getContactListByLastName(lastNameAXG);
-        if(contactExisting.size() <=1 ){
+        if(contactExisting.size() > 0 ){
             return true;
         }
         return false;
