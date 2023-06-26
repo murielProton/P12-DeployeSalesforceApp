@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Muriel Proton
  * @group             : 
- * @last modified on  : 23-06-2023
+ * @last modified on  : 26-06-2023
  * @last modified by  : Muriel Proton
 **/
 public with sharing class ContactGet {
@@ -11,7 +11,8 @@ public with sharing class ContactGet {
         checkPermissionContact();
 
         List<Contact> contactListToReturn = [SELECT Id,
-                                                    LastName
+                                                    LastName,
+                                                    Birthdate
                                             FROM Contact
                                             WHERE LastName= :contactLastName 
                                             ];
