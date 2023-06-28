@@ -74,6 +74,17 @@ You need to authenticate with Salesforce to access the APIs. Authentication gran
 6. Click Send
 7. In Postman the window will show "Status 201 Created".
 8. In the instance of Salesforce Organisation, you will find a new Account named "Postman".
+## Contact sObject in Salesforce lakes a field Activated
+  1. Setup / Object Manager / Field & Relationship
+  2. Click on New
+  3. Checkbox
+Field Label : Activated
+Default Value : Checked
+Field Name : Activated
+Description : A Contact record must not be deleted in Salesforce, it must be deactivated. When a Contact has been deleted in CRM AXG it must be this checkbox must be unchecked. 
+Help Text : This checkbox is checked when a Contact is created, and it is unchecked when the Contact record is deleted from CRM AXG.
+ Establish field-level security : System Administrator at least
+ Visible on all Layouts.
 
 ## Naming Conventions and Deseign Pattern
 Folow the rules of this GitHub Repository https://github.com/cfpb/salesforce-docs/blob/master/_pages/Salesforce-Naming-Conventions.md
