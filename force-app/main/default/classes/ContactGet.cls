@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Muriel Proton
  * @group             : 
- * @last modified on  : 26-06-2023
+ * @last modified on  : 28-06-2023
  * @last modified by  : Muriel Proton
 **/
 public with sharing class ContactGet {
@@ -12,9 +12,21 @@ public with sharing class ContactGet {
 
         List<Contact> contactListToReturn = [SELECT Id,
                                                     LastName,
-                                                    Birthdate
+                                                    Birthdate,
+                                                    Activated__c
                                             FROM Contact
                                             WHERE LastName= :contactLastName 
+                                            ];
+        return contactListToReturn;
+    }
+    public static List<Contact> getContactListByActivatedFalse(){
+        checkPermissionContact();
+
+        List<Contact> contactListToReturn = [SELECT Id,
+                                                    LastName,
+                                                    Activated__c
+                                            FROM Contact
+                                            WHERE Activated__c = false 
                                             ];
         return contactListToReturn;
     }
