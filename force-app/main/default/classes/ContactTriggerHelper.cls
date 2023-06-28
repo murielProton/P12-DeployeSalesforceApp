@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Muriel Proton
  * @group             : 
- * @last modified on  : 26-06-2023
+ * @last modified on  : 28-06-2023
  * @last modified by  : Muriel Proton
 **/
 public with sharing class ContactTriggerHelper {
@@ -13,4 +13,5 @@ public with sharing class ContactTriggerHelper {
         }
         return false;
     }
+
 }
